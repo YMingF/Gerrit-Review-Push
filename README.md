@@ -35,10 +35,10 @@
 
 ## 使用方法（一步一步）
 
-1. 打开任意 workspace（本插件默认在所有 workspace 激活）。
+1. 打开一个 Git 仓库（单项目）或一个包含多个 Git 仓库的 workspace（多项目）。
 2. 点击 VSCode 状态栏的 `Review Push`。
    1. ![1768447918646](image/README.zh-CN/1768447918646.png)
-3. 面板会扫描 workspace，并展示多个项目（仓库）：
+3. 面板会扫描当前打开的仓库，并只展示“存在可 review-push 的提交”的项目（即领先 upstream / ahead 的仓库）：
    - **Project**：项目名 + 当前分支
    - **Commit**：该项目领先 upstream 的 commit 列表
    - **Target branch**：选择要 review-push 到的目标分支
@@ -114,10 +114,10 @@ Bulk-select “commits not yet merged to upstream” across multiple projects in
 
 ## How to use (step-by-step)
 
-1. Open any workspace (the extension is active by default).
+1. Open a Git repo (single project), or a workspace that contains multiple Git repos (multi-project).
 2. Click `Review Push` in the VSCode status bar.
    1. ![Open panel from status bar](image/README.en/1768447918646.png)
-3. The panel scans the workspace and lists projects (repos):
+3. The panel scans your opened repos and only lists projects that have “review-pushable” commits (i.e. repos that are ahead of upstream):
    - **Project**: project name + current branch
    - **Commit**: commits that are ahead of upstream
    - **Target branch**: the branch you want to review-push to

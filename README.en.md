@@ -26,10 +26,10 @@ Bulk-select “commits not yet merged to upstream” across multiple projects in
 
 ## How to use (step-by-step)
 
-1. Open any workspace (the extension is active by default).
+1. Open a Git repo (single project), or a workspace that contains multiple Git repos (multi-project).
 2. Click `Review Push` in the VSCode status bar.
    1. ![Open panel from status bar](image/README.en/1768447918646.png)
-3. The panel scans the workspace and lists projects (repos):
+3. The panel scans your opened repos and only lists projects that have “review-pushable” commits (i.e. repos that are ahead of upstream):
    - **Project**: project name + current branch
    - **Commit**: commits that are ahead of upstream
    - **Target branch**: the branch you want to review-push to
@@ -71,4 +71,3 @@ It is saved locally. All branch commands will be built from this prefix.
 - Uses `git rebase -i` with `reword`.
 - **Rewrites history**: the selected commit and all descendant commits will get new SHAs.
 - The extension asks you to acknowledge this once; after that it won’t ask again.
-
