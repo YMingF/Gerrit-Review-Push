@@ -1,0 +1,72 @@
+{
+  "name": "gerrit-review-push",
+  "displayName": "Gerrit Review Push",
+  "description": "Gerrit helper: pick a commit that is ahead of upstream and push it to refs/for/<branch>.",
+  "version": "0.0.24",
+  "publisher": "YMingF",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YMingF/Gerrit-Review-Push.git"
+  },
+  "homepage": "https://github.com/YMingF/Gerrit-Review-Push",
+  "bugs": {
+    "url": "https://github.com/YMingF/Gerrit-Review-Push/issues"
+  },
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": ["SCM Providers"],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:localGerritPush.openPicker"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "localGerritPush.openPicker",
+        "title": "Gerrit Review Push: Pick Commit to Push"
+      }
+    ],
+    "configuration": {
+      "title": "Gerrit Review Push",
+      "properties": {
+        "localGerritPush.remote": {
+          "type": "string",
+          "default": "origin",
+          "description": "Default Git remote name used for Gerrit push (used to build the default command prefix)."
+        },
+        "localGerritPush.targetBranches": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": ["master"],
+          "description": "Target branches for Gerrit push. Defaults to only 'master' for first use; you can add more in the UI."
+        },
+        "localGerritPush.limit": {
+          "type": "number",
+          "default": 50,
+          "minimum": 1,
+          "description": "Max number of commits shown in the picker."
+        },
+        "localGerritPush.includeMergeCommits": {
+          "type": "boolean",
+          "default": false,
+          "description": "Include merge commits in the picker."
+        },
+        "localGerritPush.verifyRemoteHead": {
+          "type": "boolean",
+          "default": false,
+          "description": "Verify remote branch head via `git ls-remote` for more accurate ahead detection (slower)."
+        },
+        "localGerritPush.openAfterPush": {
+          "type": "boolean",
+          "default": false,
+          "description": "Open Gerrit in browser automatically after a successful push."
+        }
+      }
+    }
+  }
+}
