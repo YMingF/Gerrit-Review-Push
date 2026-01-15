@@ -2,7 +2,7 @@
   "name": "gerrit-review-push",
   "displayName": "Gerrit Review Push",
   "description": "Gerrit helper: pick a commit that is ahead of upstream and push it to refs/for/<branch>.",
-  "version": "0.0.24",
+  "version": "0.0.26",
   "publisher": "YMingF",
   "license": "MIT",
   "repository": {
